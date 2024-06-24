@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS externo -->
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo main-logo"></a>
+    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sesion.html">Inicio de Sesión</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="#">Nuestras Marcas</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Contáctanos</h2>
+  <p>Estamos aquí para ayudarte. Si tienes alguna pregunta o necesitas más información, no dudes en ponerte en contacto con nosotros a través del siguiente formulario.</p>
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" class="validate">
+          <label for="first_name">Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Apellido</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Correo Electrónico</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="message" class="materialize-textarea"></textarea>
+          <label for="message">Mensaje</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <h5>Nuestra Oficina</h5>
+      <p>1234 Calle Principal<br>Ciudad, País<br>Teléfono: +123 456 7890</p>
+    </div>
+    <div class="col s12 m6">
+      <h5>Horario de Atención</h5>
+      <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábado: 10:00 AM - 2:00 PM<br>Domingo: Cerrado</p>
+    </div>
+  </div>
+</div>
+
+<ul class="sidenav" id="mobile-nav">
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="sesion.html">Inicio de Sesión</a></li>
+  <li><a href="contacto.html">Contacto</a></li>
+  <li><a href="#">Nuestras Marcas</a></li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+</script>
+
+</body>
+</html>

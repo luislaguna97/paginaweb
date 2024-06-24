@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<nav>
+  <div class="nav-wrapper">
+    
+    <a href="#" class="brand-logo main-logo"></a>
+    
+    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sesion.html">Inicio de Sesión</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="#">Nuestras Marcas</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  
+  <h2>Bienvenido a vitamilk</h2>
+  <p>Somos una empresa dedicada a proporcionar productos lácteos frescos y saludables. 
+  Nuestra pasión es ofrecer productos de alta calidad que nutran a tu familia y promuevan un estilo de vida saludable. Explora nuestra variedad de productos y descubre el sabor auténtico de la leche y sus derivados.</p>
+  <img src="images/principal.jpg" alt="queso">
+</div>
+
+
+
+<ul class="sidenav" id="mobile-nav">
+  <li><a href="#">Inicio</a></li>
+  <li><a href="#">Inicio de Sesión</a></li>
+  <li><a href="#">Contacto</a></li>
+  <li><a href="#">Nuestras Marcas</a></li>
+</ul>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+</script>
+
+</body>
+</html>

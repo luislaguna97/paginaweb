@@ -1,0 +1,29 @@
+body {
+    background-color: #FFFFFF;
+    color: #202083;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+
+  nav {
+    background-color: #57CADB;
+  }
+
+  nav a {
+    color: #202083;
+  }
+
+  nav a:hover {
+    color: #E64E56;
+  }
+
+  .error-message {
+    color: #E64E56;
+  }
+
+ 
+  .main-logo {
+    background-image: url('logo.jpg'); 
+    background-size: cover;
+    height: 70px;
+    width: 70px; 
+  }

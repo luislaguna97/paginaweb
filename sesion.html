@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empresa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">vitamilk</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sesion.html">Inicio de Sesión</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#">Nuestras Marcas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <form id="login-form" class="col s12 m6 offset-m3">
+        <h4>Inicio de Sesión</h4>
+        <div class="input-field col s12">
+          <input id="usuario" type="text" class="validate">
+          <label for="usuario">Usuario</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="contrasena" type="password" class="validate">
+          <label for="contrasena">Contraseña</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Iniciar Sesión</button>
+      </form>
+    </div>
+
+    <div class="row">
+      <form id="register-form" class="col s12 m6 offset-m3">
+        <h4>Registro</h4>
+        <div class="input-field col s12">
+          <input id="nombre" type="text" class="validate">
+          <label for="nombre">Nombre</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Correo Electrónico</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="nueva-contrasena" type="password" class="validate">
+          <label for="nueva-contrasena">Nueva Contraseña</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Registrarse</button>
+      </form>
+    </div>
+  </div>
+
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Inicio de Sesión</a></li>
+    <li><a href="#">Contacto</a></li>
+    <li><a href="#">Nuestras Marcas</a></li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+
+      $('#login-form').on('submit', function(e) {
+        e.preventDefault();
+        const data = {
+          usuario: $('#usuario').val(),
+          contrasena: $('#contrasena').val()
+        };
+        $.ajax({
+          type: 'POST',
+          url: '/.netlify/functions/login',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          success: function(response) {
+            alert(response);
+          }
+        });
+      });
+
+      $('#register-form').on('submit', function(e) {
+        e.preventDefault();
+        const data = {
+          nombre: $('#nombre').val(),
+          email: $('#email').val(),
+          contrasena: $('#nueva-contrasena').val()
+        };
+        $.ajax({
+          type: 'POST',
+          url: '/.netlify/functions/register',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          success: function(response) {
+            alert(response);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
