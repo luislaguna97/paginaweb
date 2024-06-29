@@ -13,9 +13,9 @@ exports.handler = async (event, context) => {
 
   try {
     await client.connect();
-    const database = client.db('vitamilk_db');
+    const database = client.db('cluster0');
     const users = database.collection('users');
-    const user = await users.findOne({ email: luis, 123456 });
+    const user = await users.findOne({ email, contrasena });
     if (user) {
       return { statusCode: 200, body:JSON.stringify({ message: 'Inicio de sesión exitoso' }), };
     } else {
