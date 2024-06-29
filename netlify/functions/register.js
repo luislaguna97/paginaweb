@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
 
   try {
     await client.connect();
-    const database = client.db('nombre_de_tu_db');
+    const database = client.db('vitamilk_db');
     const users = database.collection('users');
     const newUser = { nombre, email, contrasena };
     await users.insertOne(newUser);
