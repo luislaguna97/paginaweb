@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
     const users = database.collection('users');
     const user = await users.findOne({ email: usuario, contrasena });
     if (user) {
-      return { statusCode: 200, body: 'Inicio de sesión exitoso' };
+      return { statusCode: 200, body:JSON.stringify({ message: 'Inicio de sesión exitoso' }), };
     } else {
       return { statusCode: 401, body: 'Usuario o contraseña incorrectos' };
     }
