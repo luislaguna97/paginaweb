@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
 
   const { nombre, email, contrasena } = JSON.parse(event.body);
   
-  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  const client = new MongoClient(uri);
 
   try {
     await client.connect();
